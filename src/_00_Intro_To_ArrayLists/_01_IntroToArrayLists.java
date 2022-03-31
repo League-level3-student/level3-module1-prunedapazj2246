@@ -29,11 +29,17 @@ for(int i=0;i<strings.size();i+=2) {
 //	System.out.println(s);
 }
         // 6. Print all the Strings in reverse order.
-for(int i=4;i>=strings.size();i-- ) {
-	String s = strings.get(i);
-	System.out.println(s);
+for(int i=9;i>=strings.size();i-- ) {
+	String s = strings.get(i-5);
+	//System.out.println(s);
 }
         // 7. Print only the Strings that have the letter 'e' in them.
-        
+    for (int i = 0; i < strings.size(); i++) {
+    	if(strings.get(i).contains("e")) {
+    		String s = strings.get(i);
+    		System.out.println(s);
+    	}
+		
+	}    
     }
 }
