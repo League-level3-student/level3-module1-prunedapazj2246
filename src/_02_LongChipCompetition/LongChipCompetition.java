@@ -17,12 +17,12 @@ public class LongChipCompetition {
         LongChipCompetition lcc = new LongChipCompetition();
         
      lcc.initializeBeatles();
-
+lcc.findLongestChip();
 	
 
     }
 public void findLongestChip() {
-	int name =-1;
+	int name=0;
 	double smallest =Integer.MAX_VALUE;
     for (int i = 0; i < theBeatles.size(); i++) {
     	ArrayList<Chip> lc = theBeatles.get(i).getChips();
@@ -35,8 +35,20 @@ public void findLongestChip() {
 			}
 		}
     }
-    Beatle b = theBeatles.get(name);
-    System.out.println(b);
+    
+    if(name==0) {
+    	System.out.println("George");
+    }
+    else  if(name==1) {
+    	System.out.println("John");
+    }
+    else  if(name==2) {
+    	System.out.println("Paul");
+    }
+    else {
+    	System.out.println("Ringo");
+    }
+    
 }
     private void initializeBeatles() {
         Beatle george = new Beatle("George");
