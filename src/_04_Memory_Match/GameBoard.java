@@ -1,9 +1,11 @@
 package _04_Memory_Match;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,7 +20,7 @@ public class GameBoard extends JFrame implements ActionListener {
     static Card secondSelectedCard = null;
     
     // 1. Initialize TOTAL_CARDS to 2;
-    static int TOTAL_CARDS = 0;
+    static int TOTAL_CARDS = 13;
     
     ArrayList<Card> cards;
     
@@ -31,6 +33,8 @@ public class GameBoard extends JFrame implements ActionListener {
     
     int seconds;
     
+ 
+    
     public void setup() {
         gameClock = new Timer(1000, this);
         updateTimer = new Timer(750, this);
@@ -42,34 +46,108 @@ public class GameBoard extends JFrame implements ActionListener {
         }
         
         // 2. Initialize the ArrayList of Cards declared above
-        
+        cards=new ArrayList<Card>();
         
         // 3. Create TOTAL_CARDS number of objects each with a value of 1.
         //    Also, add action listeners to each Card object and then add each
         //    of the Card objects to the ArrayList of Cards.
-        
+        for (int i = 0; i < TOTAL_CARDS; i++) {
+ for (int j = 0; j < 4; j++) {
+	if(i==0) {
+		Card c  = new Card(1);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==1) {
+		Card c  = new Card(2);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==2) {
+		Card c  = new Card(3);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==3) {
+		Card c  = new Card(4);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==4) {
+		Card c  = new Card(5);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==5) {
+		Card c  = new Card(6);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==6) {
+		Card c  = new Card(7);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==7) {
+		Card c  = new Card(8);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==8) {
+		Card c  = new Card(9);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==9) {
+		Card c  = new Card(10);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==10) {
+		Card c  = new Card(11);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==11) {
+		Card c  = new Card(12);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	else if(i==12) {
+		Card c  = new Card(13);
+		c.addActionListener(this);
+		  cards.add(c);
+	}
+	
+}
+ 
+		}
         
         // 4. Use Collections.shuffle() method to randomize the order of
         //    the cards in the ArrayList
-        
+        Collections.shuffle(cards);
         
         // 5. Initialize the panel variable declared above
-        
+        panel=new JPanel();
         
         // 6. Add all of the Card objects to the panel
-        
+        for (int i = 0; i < cards.size(); i++) {
+			panel.add(cards.get(i));
+		}
         
         // 7. Call the setupGui() method to set up the frame
-        
+        setupGui(cards);
         
         // 8. Call the startGame() method to start the game
-        
+        startGame();
     }
 
     // 9. Fill in the drawCards method to draw all the cards in the ArrayList.
     //    Run your code and verify 2 cards are displayed and the game works.
     public void drawCards() {
-        
+       for (int i = 0; i < cards.size(); i++) {
+		cards.get(i).draw();
+	} 
     }
     
     // 10. 
