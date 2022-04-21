@@ -18,9 +18,9 @@ public class GameBoard extends JFrame implements ActionListener {
     private static final long serialVersionUID = 1L;
     static Card firstSelectedCard = null;
     static Card secondSelectedCard = null;
-    
+ //   Card c;
     // 1. Initialize TOTAL_CARDS to 2;
-    static int TOTAL_CARDS = 13;
+    static int TOTAL_CARDS = 12;
     
     ArrayList<Card> cards;
     
@@ -51,72 +51,306 @@ public class GameBoard extends JFrame implements ActionListener {
         // 3. Create TOTAL_CARDS number of objects each with a value of 1.
         //    Also, add action listeners to each Card object and then add each
         //    of the Card objects to the ArrayList of Cards.
-        for (int i = 0; i < TOTAL_CARDS; i++) {
+        for (int i = 0; i <= TOTAL_CARDS; i++) {
  for (int j = 0; j < 4; j++) {
 	if(i==0) {
-		Card c  = new Card(1);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(5);
+			c.setFaceUpIcon(Card.cardImagesPath + (5) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(6);
+			c.setFaceUpIcon(Card.cardImagesPath + (6) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(7);
+			c.setFaceUpIcon(Card.cardImagesPath + (7) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(8);
+			c.setFaceUpIcon(Card.cardImagesPath + (8) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==1) {
-		Card c  = new Card(2);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(1);
+			c.setFaceUpIcon(Card.cardImagesPath + (1) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(2);
+			c.setFaceUpIcon(Card.cardImagesPath + (2) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(3);
+			c.setFaceUpIcon(Card.cardImagesPath + (3) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(4);
+			c.setFaceUpIcon(Card.cardImagesPath + (4) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==2) {
-		Card c  = new Card(3);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(49);
+			c.setFaceUpIcon(Card.cardImagesPath + (49) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(50);
+			c.setFaceUpIcon(Card.cardImagesPath + (50) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(51);
+			c.setFaceUpIcon(Card.cardImagesPath + (51) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(52);
+			c.setFaceUpIcon(Card.cardImagesPath + (52) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==3) {
-		Card c  = new Card(4);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(45);
+			c.setFaceUpIcon(Card.cardImagesPath + (45) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(46);
+			c.setFaceUpIcon(Card.cardImagesPath + (46) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(47);
+			c.setFaceUpIcon(Card.cardImagesPath + (47) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(48);
+			c.setFaceUpIcon(Card.cardImagesPath + (48) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==4) {
-		Card c  = new Card(5);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(41);
+			c.setFaceUpIcon(Card.cardImagesPath + (41) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(42);
+			c.setFaceUpIcon(Card.cardImagesPath + (42) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(43);
+			c.setFaceUpIcon(Card.cardImagesPath + (43) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(44);
+			c.setFaceUpIcon(Card.cardImagesPath + (44) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==5) {
-		Card c  = new Card(6);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(37);
+			c.setFaceUpIcon(Card.cardImagesPath + (37) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(38);
+			c.setFaceUpIcon(Card.cardImagesPath + (38) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(39);
+			c.setFaceUpIcon(Card.cardImagesPath + (39) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(40);
+			c.setFaceUpIcon(Card.cardImagesPath + (40) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==6) {
-		Card c  = new Card(7);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(33);
+			c.setFaceUpIcon(Card.cardImagesPath + (33) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(34);
+			c.setFaceUpIcon(Card.cardImagesPath + (34) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(35);
+			c.setFaceUpIcon(Card.cardImagesPath + (35) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(36);
+			c.setFaceUpIcon(Card.cardImagesPath + (36) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==7) {
-		Card c  = new Card(8);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(29);
+			c.setFaceUpIcon(Card.cardImagesPath + (29) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(30);
+			c.setFaceUpIcon(Card.cardImagesPath + (30) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(31);
+			c.setFaceUpIcon(Card.cardImagesPath + (31) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(32);
+			c.setFaceUpIcon(Card.cardImagesPath + (32) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==8) {
-		Card c  = new Card(9);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(25);
+			c.setFaceUpIcon(Card.cardImagesPath + (25) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(26);
+			c.setFaceUpIcon(Card.cardImagesPath + (26) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(27);
+			c.setFaceUpIcon(Card.cardImagesPath + (27) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(28);
+			c.setFaceUpIcon(Card.cardImagesPath + (28) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==9) {
-		Card c  = new Card(10);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(21);
+			c.setFaceUpIcon(Card.cardImagesPath + (21) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(22);
+			c.setFaceUpIcon(Card.cardImagesPath + (22) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(23);
+			c.setFaceUpIcon(Card.cardImagesPath + (23) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(24);
+			c.setFaceUpIcon(Card.cardImagesPath + (24) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==10) {
-		Card c  = new Card(11);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(17);
+			c.setFaceUpIcon(Card.cardImagesPath + (17) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(18);
+			c.setFaceUpIcon(Card.cardImagesPath + (18) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(19);
+			c.setFaceUpIcon(Card.cardImagesPath + (19) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(20);
+			c.setFaceUpIcon(Card.cardImagesPath + (20) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==11) {
-		Card c  = new Card(12);
-		c.addActionListener(this);
-		  cards.add(c);
+		if(j==0) {
+			Card c=new Card(13);
+			c.setFaceUpIcon(Card.cardImagesPath + (13) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(13);
+			c.setFaceUpIcon(Card.cardImagesPath + (14) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==2) {
+			Card c=new Card(13);
+			c.setFaceUpIcon(Card.cardImagesPath + (15) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}if(j==3) {
+			Card c=new Card(13);
+			c.setFaceUpIcon(Card.cardImagesPath + (16) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+		}
 	}
 	else if(i==12) {
-		Card c  = new Card(13);
+		if(j==0) {
+			Card c =new Card(10);
+			c.setFaceUpIcon(Card.cardImagesPath + (10) + ".png");
 		c.addActionListener(this);
 		  cards.add(c);
+		}if(j==1) {
+			Card c=new Card(11);
+			c.setFaceUpIcon(Card.cardImagesPath + (11) + ".png");
+			c.addActionListener(this);
+			  cards.add(c);
+			}if(j==2) {
+				Card c= new Card(12);
+				 c.setFaceUpIcon(Card.cardImagesPath + (12) + ".png");
+				c.addActionListener(this);
+				  cards.add(c);
+				  }if(j==3) {
+						Card c=new Card(9);
+						c.setFaceUpIcon(Card.cardImagesPath + (9) + ".png");
+						c.addActionListener(this);
+						  cards.add(c);
+					}
 	}
 	
 }
