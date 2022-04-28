@@ -68,7 +68,12 @@ ellipse(300,200, 250, 250);
 loadPixels();
         // We want to change the color of our sun so use an if statement
         // to check if the pixel is the color of the yellow circle.
-if(pixels==sunColors[0])
+for (int i = 0; i < platformNames.length; i++) {
+	if(pixels[i]==sunColors[0]) {
+		
+	}
+}
+
         // If pixel[i] is the same color as the color of our circle (sunColors[0]),
         // we need to map the pixel to a color in our sunColors[] array
         // (see 2nd gradient image in RetroSun.html)
