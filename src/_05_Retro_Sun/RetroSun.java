@@ -2,6 +2,7 @@ package _05_Retro_Sun;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -31,6 +32,7 @@ public class RetroSun extends PApplet {
 
     int bgColor = color(31, 0, 48);
 
+    ArrayList<Rectangle>missSun;
     @Override
     public void settings() {
         // 1. Set the size of your sketch to at least 800 width, 600 height
@@ -42,10 +44,17 @@ public class RetroSun extends PApplet {
         // 2. Set bgColor as the background color
         background(bgColor);
         y=440;
-        h=40;
+        h=20;
         barH=40.0f/250.0f;
         x= 300-125;
         w=2*250;
+        missSun= new ArrayList<Rectangle>();
+        for (int i = 0; i < 9; i++) {
+        	
+
+        		Rectangle rect = new Rectangle(x,y+i*22,w,h);
+        		missSun.add(rect);
+        }
     }
 
     @Override
@@ -133,11 +142,8 @@ fill(bgColor);
         // Do you see a section missing from the sun like in the 3rd image?
 
 
-rect(x,y,w,h);
-y-=1;
-//h=h-barH;
-h = map(y, 300, 550, 1, 40);
-     System.out.println(barH);   
+//rect(x,y,w,h);
+
         /*
          * PART 4: Moving the missing sun sections
          *
@@ -155,10 +161,10 @@ h = map(y, 300, 550, 1, 40);
         // Pick a y positon to be the location when the sections stop moving up.
         // If the rectangle's y positon is above this, move the rectangle's
         // y position back to the bottom of the sun.
-if(y<=300) {
-	y=440;
-	h=40;
-}
+//if(y<=300) {
+//	y=440;
+	//h=40;
+//}
         // Does the rectangle move back to the bottom?
 
         // Decrease the the height of the rectangle as it moves upwards.
@@ -178,13 +184,21 @@ if(y<=300) {
          *
          * Using a list to manage moving multiple missing sun sections
          */
-ArrayList[] Rectangle missSun = new ArrayList[];
+
         // Figure out how to create the other missing sun sections using the
         // code you wrote for the 1 missing sun section.
         // HINT: You can use the Rectangle class defined below to create
         // a list of Rectangles.
+for (int i = 0; i < missSun.size(); i++) {
+	Rectangle rect = missSun.get(i);
+	rect.y-=1;
+	rect(rect.x,rect.y,rect.w,rect.h);
+	if(rect.y<=250) {
+		rect.y=440;
+		rect.h=20;
+	}
+}
 
-        
         /*
          * PART 6: Adding extras
          *
@@ -192,6 +206,14 @@ ArrayList[] Rectangle missSun = new ArrayList[];
          * reflections and stars. See RetroSun.html in this folder for some
          * example classes
          */
+    
+    
+    
+    
+    
+    y-=1;
+  h = map(y, 300, 550, 1, 40);
+       System.out.println(barH); 
     }
 
     static public void main(String[] passedArgs) {
