@@ -6,9 +6,14 @@ import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class _02_LogSearch implements ActionListener {
+	public static void main(String[] args) {
+		_02_LogSearch log= new _02_LogSearch();
+		log.buttons();
+	}
     /*
      * Crate a HashMap of Integers for the keys and Strings for the values.
      * Create a GUI with three buttons.
@@ -55,11 +60,59 @@ public void buttons() {
 	b1.setText("add ID and Name");
 	b2.setText("Search Name");
 	b3.setText("view list");
-	
+	b4.setText("Remove ID");
+	p.add(b1);
+	p.add(b2);
+	p.add(b3);
+	p.add(b4);
+	f.add(p);
+	f.setVisible(true);
+	f.setSize(500, 500);
+	map.put(123, "Harry Howard");
+	map.put(245, "Polly Powers");
+	map.put(433, "Oliver Ortega");
 }
 @Override
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
+	if(e.getSource()==b1) {
+	String s=	JOptionPane.showInputDialog("Enter an ID number");
+	int id = Integer.parseInt(s);
+	String string= JOptionPane.showInputDialog("Enter a name");
+	map.put(id, string);
+	}
 	
+	if(e.getSource()==b2) {
+		String s=JOptionPane.showInputDialog("enter a ID number");
+		int id=Integer.parseInt(s);
+		for (int key  : map.keySet()) {
+			if(key == id) {
+				JOptionPane.showMessageDialog(null, map.get(key));
+			}
+			else if(key!=id) {
+				JOptionPane.showMessageDialog(null, "No ID number exists");
+			}
+		}
+	}
+	
+	if(e.getSource()==b3) {
+		for (int key  : map.keySet()) {
+			JOptionPane.showMessageDialog(null, "ID: " + key+" Name: "+ map.get(key) );
+		}
+	}
+	
+	if(e.getSource()==b4) {
+		String s= JOptionPane.showInputDialog("Enter an ID number");
+		int ID =Integer.parseInt(s);
+		for (int key  : map.keySet()) {
+		if(key==ID) {
+			map.remove(key);
+			JOptionPane.showMessageDialog(null, "The ID was removed");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "No ID number was found");
+		}
+	}
+}
 }
 }
