@@ -26,19 +26,28 @@ public class MeetingScheduler {
      */
     public static Schedule getMutualAvailability(Schedule person1, Schedule person2) {
     	Schedule s = new Schedule();
-    	HashMap<String, ArrayList<Integer>> sd= s.getSchedule();
-    	
-        for (int i = 0; i <sd.size() ; i++) {
-        	for (int j = 0; j < sd.size(); j++) {
+    	HashMap<String, ArrayList<Integer>> p1= person1.getSchedule();
+    	HashMap<String, ArrayList<Integer>> p2 = person2.getSchedule();
+        for (int i = 0; i <p1.size() ; i++) {
+        	for (int j = 0; j < p2.size(); j++) {
 				
 			
-		if(sd.get(person1).get(i)==sd.get(person2).get(j))	{
-			if(sd.entrySet()==sd.entrySet())
+		if(p1.keySet()==p2.keySet()&& p1.get(p1.keySet())==p2.get(p2.keySet()))	{
 			
-		}
+		
+
 		}
         
     }
-        return null;
+        }
+        return s;
 }
+    
+    
+    //public HashMap<String, ArrayList<Integer>> getSchedule(){
+       // return weeklyAvailability;
+   // }
+    
+    
+    
 }
