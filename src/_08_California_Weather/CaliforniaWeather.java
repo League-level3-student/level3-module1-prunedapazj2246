@@ -1,6 +1,7 @@
 package _08_California_Weather;
 
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -34,20 +35,39 @@ import javax.swing.JPanel;
 
 public class CaliforniaWeather {
 
-    
+	String city;	
     void start() {
         HashMap<String, WeatherData> weatherData = Utilities.getWeatherData();
         
         // All city keys have the first letter capitalized of each word
-      String city= JOptionPane.showInputDialog("Please enter a California city, weather, or temperature ");
-        String cityName = Utilities.capitalizeWords( city );
-        WeatherData datum = weatherData.get(cityName);
+      String information= JOptionPane.showInputDialog("Please enter a California city, weather, or temperature ");
+        String info = Utilities.capitalizeWords( information );
+        WeatherData datum = weatherData.get(info);
+System.out.println(info);
+      //  if( datum == null ) {
+        //    System.out.println("Unable to find weather data for: " + information);
+      //  } else {
+        //    System.out.println(information + " is " + datum.weatherSummary + " with a temperature of " + datum.temperatureF + " F");
+        //} 
         
-        if( datum == null ) {
-            System.out.println("Unable to find weather data for: " + cityName);
-        } else {
-            System.out.println(cityName + " is " + datum.weatherSummary + " with a temperature of " + datum.temperatureF + " F");
-        }    
-    }
-
+       for (String key: weatherData.keySet()) {
+		
+		
+        	
+		
+		
+			
+		
+       if(info.equalsIgnoreCase(key)) {
+    	   System.out.println(info + " is " + datum.weatherSummary + " with a temperature of " + datum.temperatureF + " F");	
+        
+       }
+         if(info.equalsIgnoreCase(weatherData.get(key).weatherSummary)) {
+    
+        }
+         if(Integer.parseInt(info)== weatherData.get(key).temperatureF) {
+        weatherData
+         }
+}
+} 
 }
